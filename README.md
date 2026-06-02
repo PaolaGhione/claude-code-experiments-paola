@@ -6,7 +6,7 @@ A hands-on learning repository following the Claude Code Beginner Crash Course.
 
 | Branch | Topic | Description |
 |--------|-------|-------------|
-| `project/hookhub` | 🔗 Hook Hub | Advanced hook management and organization systems |
+| `project/hookhub` | 🔗 Hook Hub | Filterable Next.js catalog of community-sourced Claude Code hooks |
 | `project/hooks-notifications` | 🎧 Hooks & Notifications | Automate your workflow with sound notifications and event triggers |
 | `project/custom-commands` | 🔧 Custom Commands | Extend Claude Code with custom functionality like dad joke generators and automated commits |
 | `project/mcp` | 🔗 MCP Integration | Master Model Context Protocol integration with Context7 MCP server |
