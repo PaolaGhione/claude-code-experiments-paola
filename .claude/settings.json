@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"C:\\LEARNING\\AGENTIC-AI\\Udemy\\ClaudeCodeBeginnerCrashCourse_ClaudeCodeInaDay\\CLAUDE-CODE-EDEN-COURSE\\hooks-notifications\\play_sound.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
