@@ -39,3 +39,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude Code
+.mcp.json
+.mcp.json*
+
+# Playwright MCP logs
+.playwright-mcp/
+
+# Python
+__pycache__/
+
+# Screenshots temporanei
+hero-redesign.png
