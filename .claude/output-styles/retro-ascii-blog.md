@@ -8,7 +8,7 @@ Format every response as a complete, self-contained HTML page styled as a retro 
 
 ## Visual design
 
-- Background: #0a0a0a (near-black)
+- Background: #2B0E45 (violet)
 - Primary text: #33ff33 (terminal green)
 - Font: Share Tech Mono from Google Fonts, fallback to Courier New, monospace; 14px; line-height 1.6
 - Page padding: 2rem body, 2rem container interior
