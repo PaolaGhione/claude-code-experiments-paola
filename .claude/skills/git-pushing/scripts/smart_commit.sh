@@ -33,71 +33,20 @@ git add .
 STAGED_FILES=$(git diff --cached --name-only)
 DIFF_STAT=$(git diff --cached --stat)
 
-# Analyze changes to determine commit type
-determine_commit_type() {
-    local files="$1"
-
-    # Check for specific patterns
-    if echo "$files" | grep -q "test"; then
-        echo "test"
-    elif echo "$files" | grep -qE "\.(md|txt|rst)$"; then
-        echo "docs"
-    elif echo "$files" | grep -qE "package\.json|requirements\.txt|Cargo\.toml"; then
-        echo "chore"
-    elif git diff --cached | grep -qE "^[\+].*fix|^[\+].*bug"; then
-        echo "fix"
-    elif git diff --cached | grep -qE "^[\+].*refactor"; then
-        echo "refactor"
-    else
-        echo "feat"
-    fi
-}
-
-# Analyze files to determine scope
-determine_scope() {
-    local files="$1"
-
-    # Extract directory or component name
-    local scope=$(echo "$files" | head -1 | cut -d'/' -f1)
-
-    # Check for common patterns
-    if echo "$files" | grep -q "plugin"; then
-        echo "plugin"
-    elif echo "$files" | grep -q "skill"; then
-        echo "skill"
-    elif echo "$files" | grep -q "agent"; then
-        echo "agent"
-    elif [ -n "$scope" ] && [ "$scope" != "." ]; then
-        echo "$scope"
-    else
-        echo ""
-    fi
-}
-
 # Generate commit message if not provided
 if [ -z "$1" ]; then
-    COMMIT_TYPE=$(determine_commit_type "$STAGED_FILES")
-    SCOPE=$(determine_scope "$STAGED_FILES")
+    info "Asking Claude to write a pirate commit message..."
 
-    # Count files changed
-    NUM_FILES=$(echo "$STAGED_FILES" | wc -l | xargs)
+    DIFF_CONTENT=$(git diff --cached --stat)
 
-    # Generate description based on changes
-    if [ "$COMMIT_TYPE" = "docs" ]; then
-        DESCRIPTION="update documentation"
-    elif [ "$COMMIT_TYPE" = "test" ]; then
-        DESCRIPTION="update tests"
-    elif [ "$COMMIT_TYPE" = "chore" ]; then
-        DESCRIPTION="update dependencies"
-    else
-        DESCRIPTION="update $NUM_FILES file(s)"
-    fi
+    COMMIT_MSG=$(claude --print -p "You are a pirate. Write a single git commit message in pirate speak that describes these staged changes. Use conventional commit format (type(scope): description) but make the description sound like a pirate wrote it. Only output the commit message, nothing else.
 
-    # Build commit message
-    if [ -n "$SCOPE" ]; then
-        COMMIT_MSG="${COMMIT_TYPE}(${SCOPE}): ${DESCRIPTION}"
-    else
-        COMMIT_MSG="${COMMIT_TYPE}: ${DESCRIPTION}"
+Staged changes:
+$DIFF_CONTENT")
+
+    if [ -z "$COMMIT_MSG" ]; then
+        error "Claude CLI did not return a commit message"
+        exit 1
     fi
 
     info "Generated commit message: $COMMIT_MSG"
