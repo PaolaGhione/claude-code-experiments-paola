@@ -6,6 +6,7 @@ import { hooks } from "@/data/hooks";
 import HookCard from "@/components/HookCard";
 import CategoryFilter from "@/components/CategoryFilter";
 import HeroWithSearch from "@/components/heros/HeroWithSearch";
+import Footer from "@/components/Footer";
 
 type FilterValue = "All" | HookCategory;
 
@@ -46,31 +47,7 @@ export default function Home() {
         )}
       </main>
 
-      <footer
-        className="border-t py-6"
-        style={{ backgroundColor: "#ffffff", borderColor: "#e8e6dc" }}
-      >
-        <div
-          className="mx-auto max-w-6xl px-6 flex items-center justify-between text-xs"
-          style={{
-            color: "#b0aea5",
-            fontFamily: "var(--font-lora), Lora, Georgia, serif",
-          }}
-        >
-          <span>HookHub — community Claude Code hooks</span>
-          <a
-            href="https://docs.anthropic.com/en/docs/claude-code/hooks"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors"
-            style={{ color: "#b0aea5" }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#d97757")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#b0aea5")}
-          >
-            Claude Code docs →
-          </a>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
