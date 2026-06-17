@@ -20,7 +20,7 @@ export default function Home() {
       className="flex flex-col min-h-screen"
       style={{ backgroundColor: "#faf9f5" }}
     >
-      <HeroWithSearch />
+      <HeroWithSearch hookCount={hooks.length} />
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-8">
         <div className="mb-6">

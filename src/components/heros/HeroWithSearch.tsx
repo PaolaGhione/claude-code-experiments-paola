@@ -3,6 +3,10 @@
 import { useState } from "react";
 
 const CATEGORIES = ["Safety", "Productivity", "Linting", "Formatting"] as const;
+
+interface HeroWithSearchProps {
+  hookCount: number;
+}
 type Category = (typeof CATEGORIES)[number];
 
 function HookHubLogo() {
@@ -47,7 +51,7 @@ function HookHubLogo() {
   );
 }
 
-export default function HeroWithSearch() {
+export default function HeroWithSearch({ hookCount }: HeroWithSearchProps) {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<Category | null>(null);
 
@@ -204,7 +208,7 @@ export default function HeroWithSearch() {
                 fontFamily: "var(--font-poppins), Poppins, Arial, sans-serif",
               }}
             >
-              12
+              {hookCount}
             </div>
             <div style={{ color: "#b0aea5" }}>hooks</div>
           </div>
