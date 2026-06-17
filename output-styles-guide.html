@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>:: RETRO BLOG ::</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #2B0E45;
+      color: #33ff33;
+      font-family: 'Share Tech Mono', 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      border: 1px solid #33ff33;
+      box-shadow: 0 0 20px #33ff3344;
+      padding: 2rem;
+    }
+    .banner {
+      white-space: pre;
+      color: #00ff88;
+      font-size: 11px;
+      line-height: 1.2;
+    }
+    .divider-eq  { color: #33ff33; margin: 0.75rem 0; }
+    .divider-dash{ color: #33ff33; margin: 0.75rem 0; }
+    .meta { color: #888; font-size: 12px; margin: 0.5rem 0; }
+    h1 {
+      color: #00ff88;
+      font-size: 16px;
+      text-transform: uppercase;
+      margin: 1rem 0 0.75rem;
+    }
+    h2 {
+      color: #ffcc00;
+      font-size: 14px;
+      margin: 1.25rem 0 0.5rem;
+    }
+    p  { margin-bottom: 0.75rem; }
+    ul, ol { margin: 0.5rem 0 0.75rem 1.5rem; }
+    li { margin-bottom: 0.25rem; }
+    code {
+      background: #111;
+      color: #ff6699;
+      border: 1px solid #333;
+      padding: 0 4px;
+    }
+    pre {
+      background: #111;
+      color: #ff6699;
+      border: 1px solid #333;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 0.75rem 0;
+    }
+    pre code { border: none; padding: 0; background: transparent; }
+    a { color: #00aaff; }
+    .tag { color: #ffcc00; }
+    .highlight { color: #00ff88; }
+    .dim { color: #555; font-size: 12px; }
+    .style-card {
+      border: 1px solid #33ff3344;
+      padding: 1rem;
+      margin: 1rem 0;
+      background: #050505;
+    }
+    .style-card .style-name { color: #00ff88; font-size: 15px; }
+    .style-card .style-meta { color: #555; font-size: 11px; margin-bottom: 0.5rem; }
+    .style-card .style-flag {
+      display: inline-block;
+      background: #1a3300;
+      color: #33ff33;
+      border: 1px solid #33ff33;
+      padding: 1px 6px;
+      font-size: 11px;
+      margin-right: 4px;
+    }
+    .footer { color: #555; font-size: 11px; margin-top: 1.5rem; }
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 14px;
+      background: #33ff33;
+      vertical-align: middle;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.75rem 0;
+      font-size: 13px;
+    }
+    th {
+      color: #ffcc00;
+      border-bottom: 1px solid #33ff3344;
+      padding: 4px 8px;
+      text-align: left;
+    }
+    td {
+      padding: 4px 8px;
+      border-bottom: 1px solid #1a1a1a;
+      color: #33ff33;
+    }
+    td.key { color: #ff6699; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="banner">
+ ██████╗ ██╗   ██╗████████╗██████╗ ██╗   ██╗████████╗    ███████╗████████╗██╗   ██╗██╗     ███████╗███████╗
+██╔═══██╗██║   ██║╚══██╔══╝██╔══██╗██║   ██║╚══██╔══╝    ██╔════╝╚══██╔══╝╚██╗ ██╔╝██║     ██╔════╝██╔════╝
+██║   ██║██║   ██║   ██║   ██████╔╝██║   ██║   ██║       ███████╗   ██║    ╚████╔╝ ██║     █████╗  ███████╗
+██║   ██║██║   ██║   ██║   ██╔═══╝ ██║   ██║   ██║       ╚════██║   ██║     ╚██╔╝  ██║     ██╔══╝  ╚════██║
+╚██████╔╝╚██████╔╝   ██║   ██║     ╚██████╔╝   ██║       ███████║   ██║      ██║   ███████╗███████╗███████║
+ ╚═════╝  ╚═════╝    ╚═╝   ╚═╝      ╚═════╝    ╚═╝       ╚══════╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝╚══════╝
+                          :: THE DEFINITIVE GUIDE TO OUTPUT STYLES ::
+  </div>
+
+  <div class="divider-eq">================================================================================</div>
+  <div class="meta">[ DATE: 2026-06-08 ] [ SYSTEM: RETRO-BLOG-v1.0 ] [ STATUS: ONLINE ]</div>
+  <div class="divider-dash">--------------------------------------------------------------------------------</div>
+
+  <h1>What Are Output Styles &amp; Which Ones Do You Have?</h1>
+
+  <h2>&gt; WHAT IS AN OUTPUT STYLE?</h2>
+  <p>
+    An <span class="highlight">Output Style</span> is a Claude Code configuration file that instructs the AI
+    to format <em>every single response</em> in a specific, consistent way — overriding the default
+    markdown prose that Claude would normally produce.
+  </p>
+  <p>
+    Think of it as a permanent formatting contract: once an output style is active, Claude stops
+    deciding how to present its answers and instead follows the template you defined. This affects
+    not just cosmetics — it shapes the structure, vocabulary, and medium of every reply.
+  </p>
+
+  <h2>&gt; WHERE DO THEY LIVE?</h2>
+  <p>
+    Output style files are <code>.md</code> files stored under <code>.claude/output-styles/</code>
+    inside your project directory. They use YAML frontmatter for metadata and a markdown body for
+    the actual formatting instructions:
+  </p>
+  <pre><code>---
+name: my-style          &lt;-- unique identifier
+description: one-liner  &lt;-- shown in picker/listings
+keep-coding-instructions: true   &lt;-- OPTIONAL flag (see below)
+---
+
+Format every response as ...   &lt;-- the actual instructions Claude follows</code></pre>
+
+  <h2>&gt; THE ANATOMY OF AN OUTPUT STYLE FILE</h2>
+  <table>
+    <tr><th>Field</th><th>Required</th><th>Purpose</th></tr>
+    <tr><td class="key">name</td><td>Yes</td><td>Unique slug used to select / reference the style</td></tr>
+    <tr><td class="key">description</td><td>Yes</td><td>Short description shown in listings</td></tr>
+    <tr><td class="key">keep-coding-instructions</td><td>No</td><td>If <code>true</code>, Claude keeps its built-in coding rules even while applying the style</td></tr>
+    <tr><td class="key">body (below frontmatter)</td><td>Yes</td><td>Plain-english instructions describing exactly how to format responses</td></tr>
+  </table>
+
+  <h2>&gt; HOW ARE THEY ACTIVATED?</h2>
+  <p>
+    Output styles are injected into Claude's system prompt at session start via the
+    <span class="highlight">Output Style</span> section. The active style is whatever file is
+    referenced in your project's <code>.claude/settings.json</code> (or selected in the Claude Code
+    UI). Once active, Claude reads the body of that file as a binding instruction for every turn
+    of the conversation.
+  </p>
+
+  <h2>&gt; THE keep-coding-instructions FLAG</h2>
+  <p>
+    By default, an output style <em>replaces</em> the normal response behavior entirely. If your
+    style is highly visual (like an HTML blog renderer), it could accidentally suppress Claude's
+    built-in coding guidelines — things like "don't add unnecessary comments", "prefer edits over
+    new files", etc.
+  </p>
+  <p>
+    Setting <code>keep-coding-instructions: true</code> in the frontmatter tells the harness to
+    inject the coding rules <em>alongside</em> the style, so both apply at once. Use this whenever
+    your style governs presentation but you still want rigorous coding behaviour.
+  </p>
+
+  <h2>&gt; WHY USE OUTPUT STYLES?</h2>
+  <ul>
+    <li><span class="highlight">Consistency</span> — every answer looks the same, every time, regardless of the question</li>
+    <li><span class="highlight">Automation</span> — output can be piped directly into tools (e.g. YAML → parsed by scripts)</li>
+    <li><span class="highlight">Branding / UX</span> — demos and course material can have a distinctive visual identity</li>
+    <li><span class="highlight">Cognitive focus</span> — a strict format forces terse, structured thinking</li>
+    <li><span class="highlight">Experimentation</span> — test different communication styles without modifying prompts</li>
+  </ul>
+
+  <div class="divider-dash">--------------------------------------------------------------------------------</div>
+  <h1>Your Current Output Styles</h1>
+  <p>Two output styles are currently defined in <code>.claude/output-styles/</code>:</p>
+
+  <!-- STYLE 1 -->
+  <div class="style-card">
+    <div class="style-name">1. retro-ascii-blog</div>
+    <div class="style-meta">File: .claude/output-styles/retro-ascii-blog.md</div>
+    <span class="style-flag">ACTIVE NOW</span>
+    <span class="style-flag">keep-coding-instructions: true</span>
+    <p style="margin-top:0.75rem">
+      Renders every Claude response as a <span class="highlight">complete, self-contained HTML page</span>
+      styled as a retro ASCII terminal blog. The response is raw HTML — no markdown, no prose outside
+      the HTML block. The file is saved to disk and opened in the default browser automatically.
+    </p>
+    <p><strong style="color:#ffcc00">Key design tokens:</strong></p>
+    <ul>
+      <li>Background <code>#0a0a0a</code>, primary text <code>#33ff33</code> (terminal green)</li>
+      <li>Font: Share Tech Mono (Google Fonts), fallback Courier New</li>
+      <li>Container: max-width 800px, green border + glow box-shadow</li>
+      <li>Structure: ASCII banner → meta line → h1 → content → footer with blinking cursor</li>
+      <li>Saves each response as a descriptive <code>.html</code> file and opens it in the browser</li>
+    </ul>
+    <p style="margin-top:0.5rem"><strong style="color:#ffcc00">Best for:</strong> demos, course content, visual blog-style documentation</p>
+  </div>
+
+  <!-- STYLE 2 -->
+  <div class="style-card">
+    <div class="style-name">2. yaml-concise</div>
+    <div class="style-meta">File: .claude/output-styles/yaml-concise.md</div>
+    <span class="style-flag">INACTIVE</span>
+    <p style="margin-top:0.75rem">
+      Formats every response as <span class="highlight">pure YAML</span> — key-value pairs, hierarchical,
+      no prose paragraphs whatsoever. Extremely terse and machine-readable.
+    </p>
+    <p><strong style="color:#ffcc00">Schema:</strong></p>
+    <pre><code>answer:
+  summary: one-line answer
+  details:
+    - point one
+    - point two
+  caveats:
+    - only if relevant</code></pre>
+    <p><strong style="color:#ffcc00">Rules:</strong> no prose, nest with indentation not headers, omit empty keys, values as short as possible, no preamble or closing remarks.</p>
+    <p style="margin-top:0.5rem"><strong style="color:#ffcc00">Best for:</strong> scripts that parse Claude's output, quick structured lookups, CI pipelines</p>
+  </div>
+
+  <div class="divider-dash">--------------------------------------------------------------------------------</div>
+  <h2>&gt; QUICK COMPARISON</h2>
+  <table>
+    <tr><th>Style</th><th>Output Medium</th><th>Verbosity</th><th>Machine-readable</th><th>keep-coding</th></tr>
+    <tr>
+      <td class="key">retro-ascii-blog</td>
+      <td>Full HTML page</td>
+      <td>Elaborate</td>
+      <td>No (visual)</td>
+      <td style="color:#00ff88">Yes</td>
+    </tr>
+    <tr>
+      <td class="key">yaml-concise</td>
+      <td>YAML text</td>
+      <td>Minimal</td>
+      <td>Yes</td>
+      <td style="color:#555">No</td>
+    </tr>
+  </table>
+
+  <div class="divider-dash">--------------------------------------------------------------------------------</div>
+  <h2>&gt; HOW TO ADD A NEW OUTPUT STYLE</h2>
+  <ol>
+    <li>Create <code>.claude/output-styles/my-new-style.md</code></li>
+    <li>Add YAML frontmatter with <code>name</code>, <code>description</code>, and optionally <code>keep-coding-instructions: true</code></li>
+    <li>Write the formatting instructions in the body</li>
+    <li>Select it via the Claude Code UI or reference it in <code>.claude/settings.json</code></li>
+  </ol>
+
+  <div class="divider-eq">================================================================================</div>
+  <div class="footer">EOF | RETRO-ASCII-BLOG | POWERED BY CLAUDE <span class="cursor"></span></div>
+
+</div>
+</body>
+</html>

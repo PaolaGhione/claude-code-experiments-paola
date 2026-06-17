@@ -109,4 +109,40 @@ export const hooks: Hook[] = [
     author: "hesreallyhim",
     tags: ["context", "productivity"],
   },
+  {
+    name: "Security Scanner",
+    category: "PostToolUse",
+    description:
+      "Runs automated security scanning after file edits, part of the Everything Claude Code system's 20+ hook suite spanning safety, formatting, and multi-agent coordination.",
+    repoUrl: "https://github.com/affaan-m/everything-claude-code",
+    author: "affaan-m",
+    tags: ["security", "safety"],
+  },
+  {
+    name: "Hook Collection Browser",
+    category: "SessionStart",
+    description:
+      "Entry point to awesome-claude-code's curated hooks directory covering notifications, safety, context injection, status lines, and orchestrators from many authors.",
+    repoUrl: "https://github.com/hesreallyhim/awesome-claude-code",
+    author: "hesreallyhim",
+    tags: ["productivity", "context"],
+  },
+  {
+    name: "Auto Git Stage",
+    category: "PostToolUse",
+    description:
+      "Automatically stages edited files with `git add` after every Claude write, reducing manual staging steps during long autonomous sessions.",
+    repoUrl: "https://github.com/rohitg00/awesome-claude-code-toolkit",
+    author: "rohitg00",
+    tags: ["git", "automation"],
+  },
+  {
+    name: "Safe Command Patterns",
+    category: "PreToolUse",
+    description:
+      "Tested, copy-paste-ready PreToolUse hooks that block dangerous shell patterns, protect secrets, and auto-stage git changes — designed to be minimal and easy to customize.",
+    repoUrl: "https://github.com/karanb192/claude-code-hooks",
+    author: "karanb192",
+    tags: ["safety", "security", "git"],
+  },
 ];
