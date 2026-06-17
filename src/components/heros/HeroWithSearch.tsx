@@ -15,6 +15,7 @@ function HookHubLogo() {
         viewBox="0 0 48 48"
         fill="none"
         aria-hidden="true"
+        style={{ animation: "logo-float 3.5s ease-in-out infinite" }}
       >
         <rect width="48" height="48" rx="11" fill="#d97757" />
         {/* Hook shape: vertical stem + J-curve */}
@@ -65,6 +66,7 @@ export default function HeroWithSearch() {
         style={{
           background:
             "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(217,119,87,0.07) 0%, transparent 70%)",
+          animation: "glow-breathe 4s ease-in-out infinite",
         }}
       />
 
@@ -77,6 +79,7 @@ export default function HeroWithSearch() {
             backgroundColor: "rgba(217,119,87,0.07)",
             color: "#d97757",
             fontFamily: "var(--font-poppins), Poppins, Arial, sans-serif",
+            animation: "fade-up 0.5s ease 0.05s both",
           }}
         >
           <span
@@ -86,13 +89,16 @@ export default function HeroWithSearch() {
           Open source · Community driven
         </div>
 
-        <HookHubLogo />
+        <div style={{ animation: "fade-up 0.5s ease 0.2s both" }}>
+          <HookHubLogo />
+        </div>
 
         <p
           className="mx-auto mb-8 max-w-lg text-base sm:text-lg"
           style={{
             color: "#b0aea5",
             fontFamily: "var(--font-lora), Lora, Georgia, serif",
+            animation: "fade-up 0.5s ease 0.35s both",
           }}
         >
           Discover, copy, and contribute{" "}
@@ -102,7 +108,7 @@ export default function HeroWithSearch() {
         </p>
 
         {/* Search bar */}
-        <div className="mx-auto mb-4 max-w-lg">
+        <div className="mx-auto mb-4 max-w-lg" style={{ animation: "fade-up 0.5s ease 0.48s both" }}>
           <div
             className="flex items-center gap-3 rounded-full border px-4 py-3 transition-shadow focus-within:shadow-md"
             style={{
@@ -163,7 +169,7 @@ export default function HeroWithSearch() {
         </div>
 
         {/* Quick category filters */}
-        <div className="mx-auto mb-10 flex max-w-lg flex-wrap items-center justify-center gap-2">
+        <div className="mx-auto mb-10 flex max-w-lg flex-wrap items-center justify-center gap-2" style={{ animation: "fade-up 0.5s ease 0.58s both" }}>
           {CATEGORIES.map((cat) => {
             const isActive = activeCategory === cat;
             return (
@@ -189,7 +195,7 @@ export default function HeroWithSearch() {
         </div>
 
         {/* Stats */}
-        <div className="flex items-center justify-center gap-8 text-sm">
+        <div className="flex items-center justify-center gap-8 text-sm" style={{ animation: "fade-up 0.5s ease 0.68s both" }}>
           <div className="text-center">
             <div
               className="text-2xl font-bold"

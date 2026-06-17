@@ -26,3 +26,18 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-poppins), Poppins, Arial, sans-serif;
 }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes logo-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-7px); }
+}
+
+@keyframes glow-breathe {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
+}
