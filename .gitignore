@@ -55,4 +55,12 @@ __pycache__/
 # Screenshots temporanei
 hero-redesign.png
 
+# Python scripts
+main.py
+
+# Memory
+memory/
+
+# Python virtual environment
+.venv/
 main.py
