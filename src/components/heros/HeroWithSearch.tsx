@@ -3,6 +3,10 @@
 import { useState } from "react";
 
 const CATEGORIES = ["Safety", "Productivity", "Linting", "Formatting"] as const;
+
+interface HeroWithSearchProps {
+  hookCount: number;
+}
 type Category = (typeof CATEGORIES)[number];
 
 function TerminalCard() {
@@ -102,7 +106,7 @@ function TerminalCard() {
   );
 }
 
-export default function HeroWithSearch() {
+export default function HeroWithSearch({ hookCount }: HeroWithSearchProps) {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<Category | null>(null);
 
@@ -359,7 +363,7 @@ export default function HeroWithSearch() {
           <div className="h6 flex items-center justify-center gap-8 text-sm">
             {(
               [
-                { value: "12", label: "hooks" },
+                { value: String(hookCount), label: "hooks" },
                 { value: "4", label: "categories" },
                 { value: "100%", label: "open source" },
               ] as const

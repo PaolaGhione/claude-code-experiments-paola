@@ -21,7 +21,7 @@ export default function Home() {
       className="flex flex-col min-h-screen"
       style={{ backgroundColor: "#faf9f5" }}
     >
-      <HeroWithSearch />
+      <HeroWithSearch hookCount={hooks.length} />
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-8">
         <div className="mb-6">
@@ -40,8 +40,8 @@ export default function Home() {
           </p>
         ) : (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {visible.map((hook) => (
-              <HookCard key={hook.name} hook={hook} />
+            {visible.map((hook, i) => (
+              <HookCard key={hook.name} hook={hook} index={i} />
             ))}
           </div>
         )}

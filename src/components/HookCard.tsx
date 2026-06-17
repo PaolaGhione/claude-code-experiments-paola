@@ -39,13 +39,14 @@ const categoryConfig: Record<
   },
 };
 
-export default function HookCard({ hook }: { hook: Hook }) {
+export default function HookCard({ hook, index = 0 }: { hook: Hook; index?: number }) {
   const { badgeStyle, accentColor } = categoryConfig[hook.category];
+  const delay = `${0.05 + index * 0.06}s`;
 
   return (
     <div
       className="flex flex-col overflow-hidden rounded-2xl border shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
-      style={{ backgroundColor: "#ffffff", borderColor: "#e8e6dc" }}
+      style={{ backgroundColor: "#ffffff", borderColor: "#e8e6dc", animation: `fade-up 0.5s ease ${delay} both` }}
     >
       {/* Colored accent top bar */}
       <div className="h-1 w-full" style={{ backgroundColor: accentColor }} />
