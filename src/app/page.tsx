@@ -39,8 +39,8 @@ export default function Home() {
           </p>
         ) : (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {visible.map((hook) => (
-              <HookCard key={hook.name} hook={hook} />
+            {visible.map((hook, i) => (
+              <HookCard key={hook.name} hook={hook} index={i} />
             ))}
           </div>
         )}
