@@ -1,7 +1,9 @@
 [project]
-name = "hooks-notifications"
+name = "claude-code-crash-course"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "fastmcp>=2.12.4",
+]
