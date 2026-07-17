@@ -43,12 +43,18 @@ next-env.d.ts
 # Claude Code
 .mcp.json
 .mcp.json*
+.claude/settings.local.json
 
 # Playwright MCP logs
 .playwright-mcp/
 
 # Python
 __pycache__/
+main.py
+.venv/
 
 # Screenshots temporanei
 hero-redesign.png
+
+# Memory
+memory/
